@@ -1,11 +1,15 @@
 {
 	"name": "vite-plugin-rm-others-console",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"homepage": "https://github.com/DraculaPrince/vite-plugin-rm-others-console",
 	"description": "Automatically remove console statements from other developers and only retain their own",
 	"main": "dist/index.js",
 	"scripts": {
-		"build": "rollup --config"
+		"build": "rollup --config",
+		"release:first": "standard-version --first-release",
+		"release:patch": "standard-version --release-as patch",
+		"release:minor": "standard-version --release-as minor",
+		"release:major": "standard-version --release-as major"
 	},
 	"files": [
 		"dist/",
@@ -17,6 +21,7 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
-		"rollup": "^3.26.2"
+		"rollup": "^3.26.2",
+		"standard-version": "^9.5.0"
 	}
 }
