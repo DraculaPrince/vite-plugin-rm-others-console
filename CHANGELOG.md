@@ -1,6 +1,14 @@
 # 更新日志 
 
 
+### [0.0.12](https://github.com/DraculaPrince/vite-plugin-rm-others-console/compare/v0.0.11...v0.0.12) (2023-10-10)
+
+
+### ✨ Features | 新功能
+
+* add esã ts cjs output ([9c5193f](https://github.com/DraculaPrince/vite-plugin-rm-others-console/commit/9c5193f540a6abd6e98163b1a76ff48338b1034d))
+* fix changelog ([553727e](https://github.com/DraculaPrince/vite-plugin-rm-others-console/commit/553727ec78f4632754c50a97294335f778f607e9))
+
 ### [0.0.11](https://github.com/gotocityp/vite-plugin-rm-others-console/compare/v0.0.10...v0.0.11) (2023-10-10)
 
 
