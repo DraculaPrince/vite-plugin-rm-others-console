@@ -1,5 +1,6 @@
 import childProcess from 'child_process';
 import { type } from 'os';
+import type { Plugin } from "vite";
 
 // 判断平台，win平台不支持grep
 const isWin = type() === 'Windows_NT';
@@ -10,7 +11,7 @@ const findStr = isWin ? 'findstr' : 'grep';
 //   { encoding: 'utf-8' }
 // )
 
-const VitePluginRmOthersConsole: any = () => {
+const VitePluginRmOthersConsole = () => {
 	return {
 		name: 'vite-plugin-rm-others-console',
 		enforce: 'pre',
@@ -23,7 +24,7 @@ const VitePluginRmOthersConsole: any = () => {
 
 					const includesLines = rows.map((row, idx) => (row.includes(`console.log(`) ? idx : undefined)).filter(n => n);
 
-					const removeLine = includesLines.filter(line => {
+					const removeLine = includesLines.filter((line = 0) => {
 						const authorInfo = childProcess.execSync(
 							`git blame -L ${line + 1},${line + 1} --porcelain ${id} | ${findStr} "^author "`,
 							{ encoding: 'utf-8' }
@@ -47,7 +48,7 @@ const VitePluginRmOthersConsole: any = () => {
 			}
 			return code;
 		},
-	};
+	} as Plugin;
 };
 
 export default VitePluginRmOthersConsole;

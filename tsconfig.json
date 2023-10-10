@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "es2017",
-    "moduleResolution": "node",
     "strict": true,
-    "declaration": true,
-    "noUnusedLocals": true,
+    "target": "es2022",
+    "module": "es2022",
+    "baseUrl": "./",
+    "declarationDir": "./dist/types",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "dist",
-    "lib": ["ESNext"],
-    "sourceMap": false,
-    "noEmitOnError": true,
-    "noImplicitAny": false
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "preserve",
+    "types": ["vite/client"],
+    "declaration": true,
+    "isolatedModules": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts"
-  ],
-  "exclude": ["**/dist", "**/node_modules", "**/test"]
+  "include": ["./src/**/*.ts"]
 }
+
+

@@ -3,9 +3,11 @@
 	"version": "0.0.11",
 	"homepage": "https://github.com/DraculaPrince/vite-plugin-rm-others-console",
 	"description": "Automatically remove console statements from other developers and only retain their own",
-	"main": "dist/index.js",
+	"main": "dist/cjs/index.cjs",
+	"module": "dist/esm/index.mjs",
+	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"build": "rollup --config",
+		"build": "rollup -c && tsc --emitDeclarationOnly",
 		"release:first": "standard-version --first-release",
 		"release:patch": "standard-version --release-as patch",
 		"release:minor": "standard-version --release-as minor",
@@ -16,7 +18,6 @@
 		"README.md"
 	],
 	"keywords": [],
-	"module": "dist/index.js",
 	"type": "module",
 	"author": "",
 	"license": "MIT",
@@ -25,6 +26,7 @@
 		"rollup": "^3.26.2",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"standard-version": "^9.5.0",
-		"typescript": "^5.2.2"
+		"typescript": "^4.9.4",
+		"vite": "^4.0.0"
 	}
 }
