@@ -21,7 +21,10 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
+		"@types/node": "^20.8.4",
 		"rollup": "^3.26.2",
-		"standard-version": "^9.5.0"
+		"rollup-plugin-typescript2": "^0.36.0",
+		"standard-version": "^9.5.0",
+		"typescript": "^5.2.2"
 	}
 }

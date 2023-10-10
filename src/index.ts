@@ -10,9 +10,9 @@ const findStr = isWin ? 'findstr' : 'grep';
 //   { encoding: 'utf-8' }
 // )
 
-const VitePluginRmOthersConsole = () => {
+const VitePluginRmOthersConsole: any = () => {
 	return {
-		name: 'vite-plugin-rm-ohthers-console',
+		name: 'vite-plugin-rm-others-console',
 		enforce: 'pre',
 		transform: (code, id) => {
 			try {
