@@ -1,6 +1,13 @@
 # 更新日志 
 
 
+### [0.0.11](https://github.com/gotocityp/vite-plugin-rm-others-console/compare/v0.0.10...v0.0.11) (2023-10-10)
+
+
+### ✨ Features | 新功能
+
+* use typescript ([a56688b](https://github.com/gotocityp/vite-plugin-rm-others-console/commit/a56688bcbbc41b77c6c4c5844e8f594ae656c36b))
+
 ### 0.0.10 (2023-09-06)
 
 
