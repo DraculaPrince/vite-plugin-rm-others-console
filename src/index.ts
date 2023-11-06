@@ -34,19 +34,26 @@ const VitePluginRmOthersConsole = () => {
 						return !(author.includes(userName) || author.includes('Not Committed Yet'));
 					});
 
-					return rows
-						.map((row, idx) => {
-							if (removeLine.includes(idx)) {
-								return row.replace(/console\.log\((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*\)[;\n]?/g, `{}`);
-							}
-							return row;
-						})
-						.join('\n');
+					return {
+						code: rows.map((row, idx) => {
+								if (removeLine.includes(idx)) {
+									return row.replace(/console\.log\((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*\)[;\n]?/g, `{}`);
+								}
+								return row;
+							}).join('\n'),
+						map: null // 表示源码视图不作修改
+					}
 				}
 			} catch {
-				return code;
+				return {
+					code,
+					map: null // 表示源码视图不作修改
+				}
 			}
-			return code;
+			return {
+				code,
+				map: null // 表示源码视图不作修改
+			}
 		},
 	} as Plugin;
 };
