@@ -6,10 +6,10 @@ import type { Plugin } from "vite";
 const isWin = type() === 'Windows_NT';
 const findStr = isWin ? 'findstr' : 'grep';
 
-// const userName = childProcess.execSync(
-//   `git config user.name`,
-//   { encoding: 'utf-8' }
-// )
+const userName = childProcess.execSync(
+  `git config user.name`,
+  { encoding: 'utf-8' }
+)
 
 const VitePluginRmOthersConsole = () => {
 	return {
@@ -17,7 +17,7 @@ const VitePluginRmOthersConsole = () => {
 		enforce: 'pre',
 		transform: (code, id) => {
 			try {
-				const userName = childProcess.execSync(`git config user.name`, { encoding: 'utf-8' });
+				// const userName = childProcess.execSync(`git config user.name`, { encoding: 'utf-8' });
 
 				if (!id.includes('node_modules') && code.includes(`console.log(`)) {
 					const rows = code.split('\n');
@@ -36,11 +36,11 @@ const VitePluginRmOthersConsole = () => {
 
 					return {
 						code: rows.map((row, idx) => {
-								if (removeLine.includes(idx)) {
-									return row.replace(/console\.log\((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*\)[;\n]?/g, `{}`);
-								}
-								return row;
-							}).join('\n'),
+							if (removeLine.includes(idx)) {
+								return row.replace(/console\.log\((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*\)[;\n]?/g, `{}`);
+							}
+							return row;
+						}).join('\n'),
 						map: null // 表示源码视图不作修改
 					}
 				}

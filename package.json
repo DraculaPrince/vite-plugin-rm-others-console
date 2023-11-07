@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-rm-others-console",
-	"version": "0.0.13",
+	"version": "0.0.14",
 	"homepage": "https://github.com/DraculaPrince/vite-plugin-rm-others-console",
 	"description": "Automatically remove console statements from other developers and only retain their own",
 	"main": "dist/cjs/index.cjs",
