@@ -6,10 +6,14 @@ import type { Plugin } from "vite";
 const isWin = type() === 'Windows_NT';
 const findStr = isWin ? 'findstr' : 'grep';
 
-const userName = childProcess.execSync(
-  `git config user.name`,
-  { encoding: 'utf-8' }
-)
+let userName = ''
+
+try {
+	userName = childProcess.execSync(
+		`git config user.name`,
+		{ encoding: 'utf-8' }
+	)
+} catch (e) { }
 
 const VitePluginRmOthersConsole = () => {
 	return {
@@ -19,7 +23,7 @@ const VitePluginRmOthersConsole = () => {
 			try {
 				// const userName = childProcess.execSync(`git config user.name`, { encoding: 'utf-8' });
 
-				if (!id.includes('node_modules') && code.includes(`console.log(`)) {
+				if (!id.includes('node_modules') && code.includes(`console.log(`) && userName) {
 					const rows = code.split('\n');
 
 					const includesLines = rows.map((row, idx) => (row.includes(`console.log(`) ? idx : undefined)).filter(n => n);
