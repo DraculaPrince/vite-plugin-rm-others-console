@@ -1,6 +1,19 @@
 # 更新日志 
 
 
+### [0.0.16](https://github.com/DraculaPrince/vite-plugin-rm-others-console/compare/v0.0.12...v0.0.16) (2023-11-17)
+
+
+### 📦‍ Build System | 打包构建
+
+* build warning fix ([7ef6a08](https://github.com/DraculaPrince/vite-plugin-rm-others-console/commit/7ef6a0852ca2ec619cfc79134bf34814f7aafcc4))
+
+
+### ✨ Features | 新功能
+
+* 插件设置只在开发时生效 ([da85635](https://github.com/DraculaPrince/vite-plugin-rm-others-console/commit/da856352db1eff8cb478a385b5bd1801cc4e7bcf))
+* optimize build ([a0d2b50](https://github.com/DraculaPrince/vite-plugin-rm-others-console/commit/a0d2b5069749845d76d6699f91012b8be9c20c39))
+
 ### [0.0.12](https://github.com/DraculaPrince/vite-plugin-rm-others-console/compare/v0.0.11...v0.0.12) (2023-10-10)
 
 
