@@ -19,6 +19,7 @@ const VitePluginRmOthersConsole = () => {
 	return {
 		name: 'vite-plugin-rm-others-console',
 		enforce: 'pre',
+		apply: 'serve',
 		transform: (code, id) => {
 			try {
 				// const userName = childProcess.execSync(`git config user.name`, { encoding: 'utf-8' });
